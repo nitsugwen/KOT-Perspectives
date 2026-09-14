@@ -637,16 +637,13 @@ body {
   box-shadow: 0 0 15px rgba(100, 203, 242, 0.6);
 }
 
-html, .modal {
+html {
   scroll-behavior: smooth;
 }
 
-/* MOBILE ADJUSTMENTS */
 @media (max-width: 768px) {
-  .back-to-top {
-    bottom: 20px;
-    right: 20px;
-    width: 42px;
-    height: 42px;
+  html, body {
+    height: auto;
+    overflow-y: auto;
   }
 }
