@@ -257,11 +257,17 @@ function toggleBackToTop() {
 window.addEventListener('scroll', toggleBackToTop); 
 if (mainContentContainer) mainContentContainer.addEventListener('scroll', toggleBackToTop); 
 
-// BACK TO TOP
+// BACK TO TOP LISTENERS
+window.addEventListener('scroll', toggleBackToTop, { passive: true }); 
+if (mainContentContainer) {
+  mainContentContainer.addEventListener('scroll', toggleBackToTop, { passive: true }); 
+}
+
 backToTopBtn.addEventListener('click', () => {
-  if (mainContentContainer) { 
-    mainContentContainer.scrollTo({ top: 0, behavior: 'smooth' }); 
-  } else {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); 
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  if (mainContentContainer) {
+    mainContentContainer.scrollTo({ top: 0, behavior: 'smooth' });
   }
 });
